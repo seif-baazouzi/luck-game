@@ -7,9 +7,6 @@
 [ext_resource path="res://Nodes/Player/Player.gd" type="Script" id=5]
 [ext_resource path="res://Textures/human/character_maleAdventurer_fall.png" type="Texture" id=6]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 9.6, 56 )
-
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 6 ) ],
@@ -28,16 +25,19 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 6.4, 48 )
+
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 5 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 48, -56 )
-scale = Vector2( 5, 1 )
-shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 48, -64 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 2 )
 animation = "fall"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 48, -48 )
+scale = Vector2( 5, 1 )
+shape = SubResource( 1 )

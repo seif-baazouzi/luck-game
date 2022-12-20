@@ -1,12 +1,17 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Nodes/Player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Nodes/Ground/GorundNode.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Nodes/Ground/GroundChain.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Game/Game.gd" type="Script" id=3]
 
 [node name="Game" type="Node2D"]
+script = ExtResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 304, 256 )
+position = Vector2( 288, 384 )
 
-[node name="GorundNode" parent="." instance=ExtResource( 2 )]
-position = Vector2( 312, 316 )
+[node name="GroundChain" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, 480 )
+
+[node name="GroundChain2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 864, 480 )

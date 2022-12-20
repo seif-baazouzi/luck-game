@@ -21,4 +21,7 @@ func _physics_process(delta):
 		else:
 			sprite.play("run")
 	
+	if global_position.y > 384:
+		sprite.play("fall")
+	
 	velocity = move_and_slide(velocity, Vector2.UP)
