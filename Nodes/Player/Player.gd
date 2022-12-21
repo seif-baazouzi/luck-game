@@ -5,6 +5,7 @@ onready var sprite: = $AnimatedSprite
 export(int) var jump = 400
 export(int) var gravity = 800
 
+var score: int = 0
 var velocity: Vector2 = Vector2.ZERO
 
 func _ready():
@@ -25,3 +26,10 @@ func _physics_process(delta):
 		sprite.play("fall")
 	
 	velocity = move_and_slide(velocity, Vector2.UP)
+
+
+func _on_Area2D_body_entered(body):
+	if body.is_in_group("ruby"):
+		body.queue_free()
+		score += 1
+		$"/root/Game/UI/Score".text = str(score)

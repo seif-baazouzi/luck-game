@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ruby.png-97e3e39cc4d31377c3a80415698c1cc8.stex"
+path="res://.import/ruby.png-50b0e319e476518df7eb0cc0ec7d591d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/ground/ruby.png"
-dest_files=[ "res://.import/ruby.png-97e3e39cc4d31377c3a80415698c1cc8.stex" ]
+source_file="res://Textures/ruby.png"
+dest_files=[ "res://.import/ruby.png-50b0e319e476518df7eb0cc0ec7d591d.stex" ]
 
 [params]
 
