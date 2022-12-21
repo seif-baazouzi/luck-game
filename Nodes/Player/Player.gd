@@ -2,8 +2,8 @@ extends KinematicBody2D
 
 onready var sprite: = $AnimatedSprite
 
-export(int) var jump = 200
-export(int) var gravity = 300
+export(int) var jump = 400
+export(int) var gravity = 800
 
 var velocity: Vector2 = Vector2.ZERO
 

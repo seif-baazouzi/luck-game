@@ -11,7 +11,7 @@ script = ExtResource( 3 )
 position = Vector2( 288, 384 )
 
 [node name="GroundChain" parent="." instance=ExtResource( 2 )]
-position = Vector2( 0, 480 )
+position = Vector2( 96, 480 )
 
 [node name="GroundChain2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 864, 480 )
+position = Vector2( 960, 480 )
