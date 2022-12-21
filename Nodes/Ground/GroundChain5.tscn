@@ -1,0 +1,88 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Nodes/Ground/GorundNode.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Nodes/Ground/GroundChain.gd" type="Script" id=2]
+[ext_resource path="res://Textures/ground/platformPack_tile046.png" type="Texture" id=3]
+
+[node name="GroundChain" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="GorundNode" parent="." instance=ExtResource( 1 )]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" parent="GorundNode" index="0"]
+texture = ExtResource( 3 )
+
+[node name="GorundNode2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 192, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" parent="GorundNode2" index="0"]
+texture = ExtResource( 3 )
+
+[node name="GorundNode3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 96, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" parent="GorundNode3" index="0"]
+texture = ExtResource( 3 )
+
+[node name="GorundNode4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 288, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" parent="GorundNode4" index="0"]
+texture = ExtResource( 3 )
+
+[node name="GorundNode5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 384, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" parent="GorundNode5" index="0"]
+texture = ExtResource( 3 )
+
+[node name="GorundNode6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 576, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" parent="GorundNode6" index="0"]
+texture = ExtResource( 3 )
+
+[node name="GorundNode7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 480, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" parent="GorundNode7" index="0"]
+texture = ExtResource( 3 )
+
+[node name="GorundNode8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 672, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" parent="GorundNode8" index="0"]
+texture = ExtResource( 3 )
+
+[editable path="GorundNode"]
+[editable path="GorundNode2"]
+[editable path="GorundNode3"]
+[editable path="GorundNode4"]
+[editable path="GorundNode5"]
+[editable path="GorundNode6"]
+[editable path="GorundNode7"]
+[editable path="GorundNode8"]
