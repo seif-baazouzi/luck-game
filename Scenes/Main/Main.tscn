@@ -1,0 +1,89 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Theme/font/Catamaran.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://UI/Button/Button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Main/Main.gd" type="Script" id=3]
+[ext_resource path="res://Textures/character_maleAdventurer_fallDown.png" type="Texture" id=4]
+[ext_resource path="res://Textures/character_robot_behindBack.png" type="Texture" id=5]
+[ext_resource path="res://Textures/ruby.png" type="Texture" id=6]
+[ext_resource path="res://Textures/ground/platformPack_tile001.png" type="Texture" id=7]
+[ext_resource path="res://Textures/ground/platformPack_tile046.png" type="Texture" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+font_data = ExtResource( 1 )
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.3363, 0.51389, 0.59, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Title" type="Label" parent="."]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -174.0
+margin_right = -480.0
+margin_bottom = -75.0
+custom_fonts/font = SubResource( 1 )
+text = "LUCK GAME"
+align = 1
+
+[node name="Play" parent="." instance=ExtResource( 2 )]
+anchor_top = 1.0
+anchor_right = 0.0
+margin_left = 94.0
+margin_top = -294.0
+margin_right = 382.0
+margin_bottom = -198.0
+
+[node name="Label" parent="Play" index="0"]
+text = "PLAY"
+
+[node name="Quit" parent="." instance=ExtResource( 2 )]
+anchor_top = 1.0
+anchor_right = 0.0
+margin_left = 99.0
+margin_top = -159.0
+margin_right = 387.0
+margin_bottom = -63.0
+
+[node name="Label" parent="Quit" index="0"]
+text = "QUIT"
+
+[node name="CharacterRobotBehindBack" type="Sprite" parent="."]
+position = Vector2( 576, 384 )
+rotation = -0.0140164
+texture = ExtResource( 5 )
+
+[node name="CharacterMaleAdventurerFallDown" type="Sprite" parent="."]
+position = Vector2( 672, 96 )
+rotation = 0.258401
+texture = ExtResource( 4 )
+
+[node name="PlatformPackTile046" type="Sprite" parent="."]
+position = Vector2( 768, 288 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 8 )
+
+[node name="PlatformPackTile001" type="Sprite" parent="."]
+position = Vector2( 864, 480 )
+texture = ExtResource( 7 )
+
+[node name="Ruby" type="Sprite" parent="."]
+position = Vector2( 864, 417 )
+texture = ExtResource( 6 )
+
+[connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
+
+[editable path="Play"]
+[editable path="Quit"]
