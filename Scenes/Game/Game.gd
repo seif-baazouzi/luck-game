@@ -1,6 +1,7 @@
 extends Node2D
 
-onready var player = $Player 
+onready var player = $Player
+onready var ground = $Ground
 const groundChains = [
 	preload("res://Nodes/Ground/GroundChain1.tscn"),
 	preload("res://Nodes/Ground/GroundChain2.tscn"),
@@ -27,7 +28,7 @@ func generateGround():
 		counter = 0
 		var groundChainInstance = getGroundChain().instance()
 		groundChainInstance.position = Vector2(960, getGroundYPosition())
-		add_child(groundChainInstance)
+		ground.add_child(groundChainInstance)
 
 	counter += 1
 

@@ -21,10 +21,12 @@ script = ExtResource( 3 )
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 288, 384 )
 
-[node name="GroundChain" parent="." instance=ExtResource( 2 )]
+[node name="Ground" type="Node2D" parent="."]
+
+[node name="GroundChain" parent="Ground" instance=ExtResource( 2 )]
 position = Vector2( 96, 480 )
 
-[node name="GroundChain2" parent="." instance=ExtResource( 2 )]
+[node name="GroundChain2" parent="Ground" instance=ExtResource( 2 )]
 position = Vector2( 960, 480 )
 
 [node name="UI" type="Control" parent="."]
@@ -57,8 +59,6 @@ valign = 1
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 501.0
-margin_bottom = 99.0
 custom_fonts/font = SubResource( 2 )
 text = "NEW HIGH SCORE :)"
 align = 1
