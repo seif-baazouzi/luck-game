@@ -1,7 +1,11 @@
 extends Node2D
 
+const WINDOW_WIDTH = 960
+const WINDOW_HEIGHT = 540
+
 onready var player = $Player
 onready var ground = $Ground
+onready var clouds = $Clouds
 const groundChains = [
 	preload("res://Nodes/Ground/GroundChain1.tscn"),
 	preload("res://Nodes/Ground/GroundChain2.tscn"),
@@ -10,6 +14,7 @@ const groundChains = [
 	preload("res://Nodes/Ground/GroundChain5.tscn"),
 	preload("res://Nodes/Ground/GroundChain6.tscn"),
 ]
+const cloud = preload("res://Nodes/Cloud/Cloud.tscn")
 
 var speed = 5
 var counter = 0
@@ -20,18 +25,21 @@ func _ready():
 	setTopScore()
 
 func _physics_process(delta):
-	generateGround()
+	generateGroundAndCloud()
 	restartGame()	
 	
-func generateGround():
+func generateGroundAndCloud():
 	if counter == 36 * speed:
 		counter = 0
 		var groundChainInstance = getGroundChain().instance()
-		groundChainInstance.position = Vector2(960, getGroundYPosition())
+		groundChainInstance.position = Vector2(WINDOW_WIDTH, getGroundYPosition())
 		ground.add_child(groundChainInstance)
-
+		
+		var cloudInstance = cloud.instance()
+		clouds.add_child(cloudInstance)
+		
 	counter += 1
-
+	
 func restartGame():
 	# set new high score
 	if player.global_position.y > 576:
