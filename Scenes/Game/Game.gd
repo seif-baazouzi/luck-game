@@ -33,6 +33,7 @@ func generateGround():
 	counter += 1
 
 func restartGame():
+	# set new high score
 	if player.global_position.y > 576:
 		var data = loadData()
 
@@ -44,8 +45,9 @@ func restartGame():
 			$UI/NewHighScore.visible = true
 			data["score"] = player.score
 			saveData(data)
-		
-		yield(get_tree().create_timer(3), "timeout")
+	
+	# delay scene restart
+	if player.global_position.y > 3000:
 		get_tree().reload_current_scene()
 
 
