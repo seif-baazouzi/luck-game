@@ -6,6 +6,7 @@ export(int) var jump = 400
 export(int) var gravity = 800
 
 var score: int = 0
+var oldYPosition: int
 var velocity: Vector2 = Vector2.ZERO
 
 func _ready():
@@ -19,6 +20,8 @@ func _ready():
 	sprite.play("run")
 	sprite.playing = true
 	
+	oldYPosition = int(global_position.y)
+	
 func _physics_process(delta):
 	velocity.y += gravity * delta
 	
@@ -28,9 +31,12 @@ func _physics_process(delta):
 			sprite.play("jump")
 		else:
 			sprite.play("run")
-	
-	if global_position.y > 384:
-		sprite.play("fall")
+	else:
+		var currentYPosition = int(global_position.y)
+		if oldYPosition < currentYPosition:
+			sprite.play("fall")
+		
+		oldYPosition = currentYPosition
 	
 	velocity = move_and_slide(velocity, Vector2.UP)
 
