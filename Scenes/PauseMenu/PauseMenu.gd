@@ -2,6 +2,7 @@ extends Control
 
 func _process(_delta):
 	if Input.is_action_just_pressed("pause"):
+		$Resume.grab_focus()
 		_on_Resume_pressed()
 
 func _on_Resume_pressed():

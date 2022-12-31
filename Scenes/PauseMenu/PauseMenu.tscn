@@ -26,6 +26,7 @@ anchor_bottom = 0.5
 margin_top = -174.0
 margin_right = 144.0
 margin_bottom = -78.0
+focus = true
 
 [node name="Label" parent="Resume" index="0"]
 text = "RESUME"
