@@ -9,6 +9,13 @@ var score: int = 0
 var velocity: Vector2 = Vector2.ZERO
 
 func _ready():
+	randomize()
+	
+	# select human or robot randomly
+	if int(rand_range(0, 2)) == 0:
+		var human = preload("res://Nodes/Player/human-anim.tres")
+		sprite.frames = human
+	
 	sprite.play("run")
 	sprite.playing = true
 	
