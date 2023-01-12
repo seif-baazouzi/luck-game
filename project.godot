@@ -8,11 +8,25 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Resource",
+"class": "GameData",
+"language": "GDScript",
+"path": "res://SaveSystem/GameData.gd"
+} ]
+_global_script_class_icons={
+"GameData": ""
+}
+
 [application]
 
 config/name="luck"
 run/main_scene="res://Scenes/Main/Main.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+SaveSystem="*res://SaveSystem/SaveSystem.gd"
 
 [display]
 
